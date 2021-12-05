@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<RootNamespace>AdventOfCode.Year2021.Solvers</RootNamespace>
@@ -10,6 +10,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Days\Day-02\" />
+	  <Folder Include="Days\Day-03\" />
 	  <Folder Include="Helpers\" />
 	</ItemGroup>
 

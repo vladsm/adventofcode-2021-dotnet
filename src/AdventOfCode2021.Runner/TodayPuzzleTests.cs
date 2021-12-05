@@ -18,8 +18,8 @@ public class TodayPuzzleTests : PuzzleTestsBase
 	public async Task Result_should_be_accepted_by_site()
 	{
 		await Runner.
-			Solve<(int, int), int>(2021, 2, 2).
-			AssertingResult(Day2.ParseInputLine).
+			Solve<bool[], int>(2021, 3, 1).
+			AssertingResult(Day3.ParseInputLine).
 			Run(_output);
 	}
 }
