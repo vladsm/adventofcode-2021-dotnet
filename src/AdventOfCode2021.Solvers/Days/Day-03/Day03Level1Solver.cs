@@ -1,8 +1,8 @@
 ﻿namespace AdventOfCode.Year2021.Solvers;
 
-public sealed class Day03Level1Solver : IAsyncSolver<bool[], int>
+public sealed class Day03Level1Solver : Day03SolverBase
 {
-	public async ValueTask<int> Solve(IAsyncEnumerable<bool[]> entries)
+	public override async ValueTask<int> Solve(IAsyncEnumerable<bool[]> entries)
 	{
 		const int entrySize = 12;
 
@@ -10,7 +10,7 @@ public sealed class Day03Level1Solver : IAsyncSolver<bool[], int>
 			Select(bitsCount => bitsCount > 0).
 			ToArray();
 		bool[] epsilonRate = gammaRate.Select(bit => !bit).ToArray();
-		return toNumber(gammaRate) * toNumber(epsilonRate);
+		return ToNumber(gammaRate) * ToNumber(epsilonRate);
 
 		int[] aggregate(int[] accumulator, bool[] value)
 		{
@@ -19,14 +19,6 @@ public sealed class Day03Level1Solver : IAsyncSolver<bool[], int>
 				Zip(accumulator).
 				Select(e => e.First + e.Second).
 				ToArray();
-		}
-
-		int toNumber(bool[] bits)
-		{
-			return bits.
-				Reverse().
-				Select((bit, index) => bit ? (1 << index) : 0).
-				Sum();
 		}
 	}
 }

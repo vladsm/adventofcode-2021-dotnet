@@ -21,5 +21,10 @@ public class TodayPuzzleTests : PuzzleTestsBase
 			Solve<bool[], int>(2021, 3, 1).
 			AssertingResult(Day3.ParseInputLine).
 			Run(_output);
+		
+		await Runner.
+			Solve<bool[], int>(2021, 3, 2).
+			AssertingResult(Day3.ParseInputLine).
+			Run(_output);
 	}
 }
