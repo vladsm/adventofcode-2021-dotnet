@@ -4,8 +4,6 @@ public sealed class Day03Level2Solver : Day03SolverBase
 {
 	public override async ValueTask<int> Solve(IAsyncEnumerable<bool[]> entriesSource)
 	{
-		const int entrySize = 12;
-
 		bool[][] entries = await entriesSource.ToArrayAsync();
 
 		int oxygenRating = FindRating(entries, true, 0);
