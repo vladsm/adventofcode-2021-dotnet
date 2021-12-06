@@ -1,8 +1,8 @@
 ﻿namespace AdventOfCode.Year2021.Solvers;
 
-public sealed class Day01Level1Solver : SolverWithEnumerableInput<int, int>
+public sealed class Day01Level1Solver : SolverWithArrayInput<int, int>
 {
-	protected override int Solve(IEnumerable<int> entries)
+	protected override int Solve(int[] entries)
 	{
 		return entries.
 			LookBackSelect(detectIncreased).
