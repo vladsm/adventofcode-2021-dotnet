@@ -2,10 +2,19 @@
 
 namespace AdventOfCode.Year2021.Solvers;
 
-public sealed class Day04Level1Solver : SolverWithArrayInput<IInputEntry, int>
+public sealed class Day04Level1Solver : Day04SolverBase
 {
-	protected override int Solve(IInputEntry[] entries)
+	public override async ValueTask<int> Solve(IAsyncEnumerable<IInputEntry> entries)
 	{
-		throw new NotImplementedException();
+		var (drawnNumbers, boards) = await ParseEntries(entries);
+
+		foreach (int number in drawnNumbers)
+		foreach (Board board in boards)
+		{
+			bool win = board.AcceptNumberAndCheckWin(number);
+			if (win) return number * board.CalculateNotMarkedNumbersSum();
+		}
+		
+		throw new InvalidOperationException("Drawn numbers are completed but there is still no winning board");
 	}
 }
