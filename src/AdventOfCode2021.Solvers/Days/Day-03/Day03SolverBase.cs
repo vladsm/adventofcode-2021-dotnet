@@ -1,4 +1,4 @@
-namespace AdventOfCode.Year2021.Solvers;
+namespace AdventOfCode.Year2021.Solvers.Day3;
 
 public abstract class Day03SolverBase : IAsyncSolver<bool[], int>
 {

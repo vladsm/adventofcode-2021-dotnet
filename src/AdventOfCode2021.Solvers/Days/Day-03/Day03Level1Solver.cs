@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.Year2021.Solvers;
+﻿namespace AdventOfCode.Year2021.Solvers.Day3;
 
 public sealed class Day03Level1Solver : Day03SolverBase
 {

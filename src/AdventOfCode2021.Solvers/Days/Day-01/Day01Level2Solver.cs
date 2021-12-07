@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.Year2021.Solvers;
+﻿namespace AdventOfCode.Year2021.Solvers.Day1;
 
 public sealed class Day01Level2Solver : IAsyncSolver<int, int>
 {

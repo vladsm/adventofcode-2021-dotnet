@@ -1,6 +1,6 @@
-﻿namespace AdventOfCode.Year2021.Solvers;
+﻿namespace AdventOfCode.Year2021.Solvers.Day2;
 
-public static class Day2
+public static class Helpers
 {
 	public static (int, int) ParseInputLine(string line)
 	{
