@@ -9,10 +9,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Folder Include="Helpers\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <PackageReference Include="AdventOfCode.Runner" Version="1.0.1" />
 	</ItemGroup>
 
