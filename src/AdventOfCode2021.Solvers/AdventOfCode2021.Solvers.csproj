@@ -12,4 +12,8 @@
 	  <PackageReference Include="AdventOfCode.Runner" Version="1.0.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Days\Day-07\" />
+	</ItemGroup>
+
 </Project>
