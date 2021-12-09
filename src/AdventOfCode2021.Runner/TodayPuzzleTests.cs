@@ -1,6 +1,4 @@
-﻿using AdventOfCode.Year2021.Solvers;
-
-using Xunit;
+﻿using Xunit;
 using Xunit.Abstractions;
 
 namespace AdventOfCode.Year2021.Runner;
@@ -17,20 +15,14 @@ public class TodayPuzzleTests : PuzzleTestsBase
 	[Fact(DisplayName = "Result should be accepted by site")]
 	public async Task Result_should_be_accepted_by_site()
 	{
-		//await AdventOfCode.
-		//	SolveUsing(new Day07Level2Solver()).
-		//	WithInput(new[] { new[] { 16, 1, 2, 0, 4, 2, 7, 1, 2, 14 } }).
-		//	ObservingResultWith(result => _output.WriteLine($"Result: {result}")).
-		//	Run();
-
 		await Runner.
-			Solve<int[], int>(2021, 7, 1).
-			AssertingResult(Parsing.ParseToIntArray).
+			Solve<string[], int>(2021, 8, 1).
+			AssertingResult(Solvers.Day8.Helpers.ParseLevel1Input).
 			Run(_output);
-
+		
 		await Runner.
-			Solve<int[], int>(2021, 7, 2).
-			AssertingResult(Parsing.ParseToIntArray).
+			Solve<(string[], string[]), int>(2021, 8, 2).
+			AssertingResult(Solvers.Day8.Helpers.ParseLevel2Input).
 			Run(_output);
 	}
 }
