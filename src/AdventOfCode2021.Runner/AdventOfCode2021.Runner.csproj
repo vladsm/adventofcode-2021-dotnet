@@ -13,7 +13,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="AdventOfCode.Runner" Version="1.0.1" />
+		<PackageReference Include="AdventOfCode.Runner" Version="1.0.2" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
