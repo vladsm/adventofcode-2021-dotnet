@@ -18,13 +18,13 @@ public class TodayPuzzleTests : PuzzleTestsBase
 	public async Task Result_should_be_accepted_by_site()
 	{
 		await Runner.
-			Solve<byte[], int>(2021, 15, 1).
-			AssertingResult(Parsing.ParseToDigitsArray).
+			Solve<char[], ulong>(2021, 16, 1).
+			AssertingResult(Parsing.ParseToCharactersArray).
 			Run(_output);
 		
 		await Runner.
-			Solve<byte[], int>(2021, 15, 2).
-			AssertingResult(Parsing.ParseToDigitsArray).
+			Solve<char[], ulong>(2021, 16, 2).
+			AssertingResult(Parsing.ParseToCharactersArray).
 			Run(_output);
 	}
 }
