@@ -55,4 +55,19 @@ internal static class EnumerableExtensions
 			previous = iterator.Current;
 		}
 	}
+	
+	public static IEnumerable<TAccumulate> AccumulatingSelect<TSource, TAccumulate>(
+		this IEnumerable<TSource> source,
+		TAccumulate seed,
+		Func<TAccumulate, TSource, TAccumulate> func
+		)
+	{
+		TAccumulate previous = seed;
+		foreach (TSource item in source)
+		{
+			TAccumulate next = func(previous, item);
+			previous = next;
+			yield return next;
+		}
+	}
 }
