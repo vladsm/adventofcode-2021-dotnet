@@ -37,16 +37,16 @@ internal static class EnumerableExtensions
 			previous = iterator.Current;
 		}
 	}
-
-	public static IEnumerable<TResult> LookBackSelectInner<TSource, TResult>(
+	
+	public static IEnumerable<TResult> LookBackSelectRef<TSource, TResult>(
 		this IEnumerable<TSource> source,
 		Func<TSource, TSource?, TResult> projection,
-		TSource? beforeFirst
-		) where TSource : class
+		TSource? beforeFirst = default
+		)
 	{
 		using IEnumerator<TSource> iterator = source.GetEnumerator();
 		if (!iterator.MoveNext()) yield break;
-		
+
 		TSource previous = iterator.Current;
 		yield return projection(previous, beforeFirst);
 		while (iterator.MoveNext())
@@ -56,6 +56,25 @@ internal static class EnumerableExtensions
 		}
 	}
 	
+	public static IEnumerable<TResult> LookForwardSelect<TSource, TResult>(
+		this IEnumerable<TSource> source,
+		Func<TSource, TSource?, TResult> projection,
+		TSource? afterLast = default
+		) where TSource : struct
+	{
+		using IEnumerator<TSource> iterator = source.GetEnumerator();
+		if (!iterator.MoveNext()) yield break;
+		
+		TSource current = iterator.Current;
+		while (iterator.MoveNext())
+		{
+			yield return projection(current, iterator.Current);
+			current = iterator.Current;
+		}
+
+		yield return projection(current, afterLast);
+	}
+
 	public static IEnumerable<TAccumulate> AccumulatingSelect<TSource, TAccumulate>(
 		this IEnumerable<TSource> source,
 		TAccumulate seed,
