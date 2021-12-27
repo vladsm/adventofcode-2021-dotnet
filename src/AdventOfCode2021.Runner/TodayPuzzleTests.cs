@@ -1,4 +1,4 @@
-﻿using AdventOfCode.Year2021.Solvers.Day22;
+﻿using AdventOfCode.Year2021.Solvers.Day23;
 
 using Xunit;
 using Xunit.Abstractions;
@@ -18,12 +18,12 @@ public class TodayPuzzleTests : PuzzleTestsBase
 	public async Task Result_should_be_accepted_by_site()
 	{
 		await Runner.
-			Solve<Cuboid, ulong>(2021, 22, 1).
+			Solve<IInputEntry, int>(2021, 23, 1).
 			AssertingResult(Helpers.ParseInputLine).
 			Run(_output);
 
 		await Runner.
-			Solve<Cuboid, ulong>(2021, 22, 2).
+			Solve<IInputEntry, int>(2021, 23, 2).
 			AssertingResult(Helpers.ParseInputLine).
 			Run(_output);
 	}
